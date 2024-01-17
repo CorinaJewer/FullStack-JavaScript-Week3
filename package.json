@@ -1,0 +1,15 @@
+{
+  "name": "fullstack-javascript-week3",
+  "version": "1.0.0",
+  "description": "Semester 3 - Keyin College - FullStack Javascript - Week 3 Lessons",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "validator": "^13.11.0"
+  }
+}
