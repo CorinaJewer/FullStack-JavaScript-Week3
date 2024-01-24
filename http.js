@@ -3,8 +3,8 @@ var fs = require('fs');
 
 //serveText('Hello World');
 //serveHtml('<html><body><b>Woot</b> Woot</body></html>');
-//serveFile('first.html');
-serveJson('user.json')
+serveFile('first.html');
+//serveJson('user.json')
 
 function serveText(theText){
   http.createServer(function (req, res) {
