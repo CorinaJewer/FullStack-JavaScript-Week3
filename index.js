@@ -26,6 +26,15 @@ const server = http.createServer((request, response) => {
             response.end('Cookie Set');
             break;
 
+            //set a cookie named fullName with the value Fred Flintstone when the path /cookie is accessed. The specific use case for this cookie depends on the requirements of the web application. It could be used for user identification, customization, or any other functionality that involves storing information on the client side.
+
+
+
+
+
+
+
+
         case '/about':
             response.statusCode = 200
             if(DEBUG) console.log('About Route')
@@ -51,7 +60,7 @@ const server = http.createServer((request, response) => {
             response.end('404 not found.')
             break;
     }  
-    
+
     function fetchFile(filename){
         fs.readFile(filename,(error,content)=>{
             if(error){
