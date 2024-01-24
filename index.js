@@ -13,16 +13,28 @@ const server = http.createServer((request, response) => {
             path += 'index.html';
             if(DEBUG) console.log('Path: ',path)
             fetchFile(path);
-        break;
+            break;
+
+        case '/home':
+            response.statusCode = 301; //permanently moved - redirect page
+            response.setHeader('Location', '/');
+            response.end();
+            break;
+
+        case '/cookie':
+            response.setHeader('Set-Cookie', 'fullName = Fred Flintstone');
+            response.end('Cookie Set');
+            break;
 
         case '/about':
+            response.statusCode = 200
             if(DEBUG) console.log('About Route')
             //filename = 'about.html';
             path += 'about.html';
             //fetchFile(fiename);
             if(DEBUG) console.log('Path: ',path);
             fetchFile(path);
-        break;
+            break;
 
         case '/contact':
             if(DEBUG) console.log('Contact Route')
@@ -31,14 +43,15 @@ const server = http.createServer((request, response) => {
             //fetchFile(filename);
             if(DEBUG) console.log('Path: ',path);
             fetchFile(path);
-        break;
+            break;
 
         default:
             if(DEBUG) console.log('404 not found')
             response.writeHead(404, {'Content-Type':'text/plain'});
             response.end('404 not found.')
-        break;
+            break;
     }  
+    
     function fetchFile(filename){
         fs.readFile(filename,(error,content)=>{
             if(error){
